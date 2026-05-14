@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+<title>Logan Welch | Clinical Psychology & Neuropsychology</title>
+<meta name="description" content="Logan Welch is a psychology and sociology researcher at FGCU Honors College pursuing a PhD in Clinical Psychology. Research interests include experimental treatments, metacognition, and eating disorders.">
+<meta name="keywords" content="Logan Welch, clinical psychology, neuropsychology, neuroscience, psychology researcher, PhD applicant, FGCU, honors thesis, metacognition, eating disorders, ketamine">
+<meta name="author" content="Logan Welch">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Logan Welch | Clinical Psychology & Neuropsychology">
+<meta property="og:description" content="Psychology and sociology researcher at FGCU pursuing a PhD in Clinical Psychology. Honors thesis researcher under Dr. Krystal D. Mize.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://loganwelch.github.io">
+
+<link rel="canonical" href="https://loganwelch.github.io">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sage: #6B8F71; --sage-light: #EAF0EB; --sage-dark: #3D5C42;
+    --warm: #C4956A; --warm-light: #F7EFE6;
+    --cream: #FAF8F4; --text: #2C2A26; --text-muted: #6B6860;
+    --border: rgba(107,143,113,0.18); --radius: 14px;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; font-size: 15px; line-height: 1.7; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,248,244,0.92); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem; height: 60px;
+  }
+  .nav-logo { font-family: 'Lora', serif; font-size: 18px; font-weight: 500; color: var(--sage-dark); letter-spacing: 0.01em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: var(--text-muted); text-decoration: none; text-transform: uppercase; transition: color 0.2s; cursor: pointer; }
+  .nav-links a:hover { color: var(--sage-dark); }
+  .nav-links a.active { color: var(--sage); font-weight: 500; }
+
+  section { display: none; animation: fadeIn 0.4s ease; }
+  section.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 3.5rem 2rem; }
+
+  .hero {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3rem; align-items: center; min-height: calc(100vh - 60px);
+    max-width: 860px; margin: 0 auto; padding: 2rem 2rem;
+  }
+  .hero-text h1 { font-family: 'Lora', serif; font-size: 44px; font-weight: 500; line-height: 1.2; color: var(--text); margin-bottom: 0.5rem; }
+  .hero-text h1 em { color: var(--sage); font-style: italic; }
+  .hero-subtitle { font-size: 14px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.25rem; }
+  .hero-bio { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 1.75rem; }
+  .hero-bio p + p { margin-top: 0.9rem; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; }
+  .tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; background: var(--sage-light); color: var(--sage-dark); font-weight: 500; }
+  .tag.warm { background: var(--warm-light); color: #7a4d25; }
+  .btn { display: inline-block; padding: 12px 28px; background: var(--sage); color: #fff; border-radius: 999px; font-size: 14px; font-weight: 500; text-decoration: none; cursor: pointer; border: none; transition: background 0.2s, transform 0.15s; margin-right: 10px; }
+  .btn:hover { background: var(--sage-dark); transform: translateY(-1px); }
+  .btn.outline { background: transparent; color: var(--sage); border: 1.5px solid var(--sage); }
+  .btn.outline:hover { background: var(--sage-light); transform: translateY(-1px); }
+
+  .hero-portrait { display: flex; flex-direction: column; align-items: center; }
+  .portrait-frame {
+    width: 280px; height: 340px;
+    border-radius: 140px 140px 120px 120px;
+    background: linear-gradient(160deg, var(--sage-light) 0%, #d4e8d6 100%);
+    overflow: hidden; border: 3px solid rgba(107,143,113,0.25);
+    display: flex; align-items: flex-end; justify-content: center;
+  }
+  .portrait-placeholder { font-size: 100px; line-height: 1; margin-bottom: -10px; opacity: 0.35; }
+  .portrait-label { margin-top: 14px; font-size: 12px; color: var(--text-muted); text-align: center; font-style: italic; }
+  .affiliation-badge { margin-top: 16px; background: var(--warm-light); border: 1px solid rgba(196,149,106,0.3); border-radius: var(--radius); padding: 10px 18px; text-align: center; }
+  .affiliation-badge p { font-size: 13px; color: var(--text-muted); }
+  .affiliation-badge strong { color: var(--text); font-size: 14px; }
+
+  .page-header { margin-bottom: 2.5rem; }
+  .page-header .eyebrow { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm); font-weight: 500; margin-bottom: 0.4rem; }
+  .page-header h2 { font-family: 'Lora', serif; font-size: 32px; font-weight: 500; color: var(--text); line-height: 1.2; }
+  .page-header p { margin-top: 0.75rem; color: var(--text-muted); font-size: 15px; max-width: 620px; }
+
+  .research-grid { display: grid; gap: 20px; }
+  .research-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: box-shadow 0.2s, transform 0.2s; }
+  .research-card:hover { box-shadow: 0 4px 20px rgba(107,143,113,0.12); transform: translateY(-2px); }
+  .card-badge { font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; display: inline-block; margin-bottom: 10px; }
+  .badge-neuro { background: var(--sage-light); color: var(--sage-dark); }
+  .badge-clinical { background: var(--warm-light); color: #7a4d25; }
+  .badge-method { background: #EDE8F5; color: #4A2D8A; }
+  .research-card h3 { font-family: 'Lora', serif; font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 8px; line-height: 1.35; }
+  .research-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+  .card-meta { margin-top: 14px; display: flex; gap: 16px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 12px; flex-wrap: wrap; }
+  .card-meta span { display: flex; align-items: center; gap: 5px; }
+
+  .pub-list { display: flex; flex-direction: column; }
+  .pub-item { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-year { font-size: 12px; font-weight: 500; color: var(--warm); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .pub-item h3 { font-family: 'Lora', serif; font-size: 17px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 5px; }
+  .pub-authors { font-size: 13.5px; color: var(--text-muted); margin-bottom: 3px; }
+  .pub-authors strong { color: var(--sage-dark); }
+  .pub-venue { font-size: 13px; color: var(--text-muted); font-style: italic; }
+  .pub-links { margin-top: 8px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .pub-link { font-size: 12px; color: var(--sage); font-weight: 500; text-decoration: none; border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; transition: background 0.15s; cursor: pointer; }
+  .pub-link:hover { background: var(--sage-light); }
+
+  .cv-section { margin-bottom: 2.5rem; }
+  .cv-section-title { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1.5px solid var(--warm-light); }
+  .cv-item { display: grid; grid-template-columns: 140px 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+  .cv-year { font-size: 13px; color: var(--text-muted); padding-top: 2px; }
+  .cv-detail h4 { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+  .cv-detail p { font-size: 13.5px; color: var(--text-muted); }
+  .cv-place { color: var(--sage-dark) !important; font-size: 13px !important; font-weight: 500; margin-bottom: 4px !important; }
+  .cv-detail ul { font-size: 13.5px; color: var(--text-muted); padding-left: 1.2rem; margin-top: 4px; }
+  .cv-detail ul li { margin-bottom: 3px; }
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+  .contact-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: flex; align-items: flex-start; gap: 14px; }
+  .contact-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--sage-light); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .contact-card h4 { font-size: 13px; color: var(--text-muted); font-weight: 400; margin-bottom: 2px; }
+  .contact-card p { font-size: 14px; font-weight: 500; color: var(--text); word-break: break-word; }
+  .contact-form { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; }
+  .contact-form h3 { font-family: 'Lora', serif; font-size: 20px; margin-bottom: 1.25rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 12px; color: var(--text-muted); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 5px; }
+  .form-group input, .form-group textarea { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text); transition: border-color 0.2s; outline: none; }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--sage); }
+  .form-group textarea { height: 110px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-muted); }
+
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 2rem; }
+    .hero-portrait { display: none; }
+    .hero-text h1 { font-size: 34px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .cv-item { grid-template-columns: 1fr; gap: 2px; }
+    .form-row { grid-template-columns: 1fr; }
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.02em; }
+    .container { padding: 2rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Logan Welch</div>
+  <ul class="nav-links">
+    <li><a onclick="show('about')" class="active" id="nav-about">About</a></li>
+    <li><a onclick="show('research')" id="nav-research">Research</a></li>
+    <li><a onclick="show('publications')" id="nav-publications">Publications</a></li>
+    <li><a onclick="show('cv')" id="nav-cv">CV</a></li>
+    <li><a onclick="show('contact')" id="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="active">
+  <div class="hero">
+    <div class="hero-text">
+      <p class="hero-subtitle">Clinical Psychology · Neuropsychology</p>
+      <h1>Logan Welch, <em>B.A.</em></h1>
+
+      <div class="hero-bio">
+        <p>After graduating with a dual degree in psychology and sociology, with a concentration in neuroscience and cognition and a minor in biology, in May 2026, I am looking to continue this training. I intend to earn my PhD in Clinical Psychology to become a therapist and a researcher — roles that I believe mutually strengthen one another.</p>
+        <p>I have gained significant research experience in psychology labs as an undergraduate student, culminating in my development, execution, and defense of an independent honors thesis project regarding perceptions of an experimental treatment under the supervision of Dr. Krystal D. Mize. I have also been involved in research on metacognition and eating disorders, both of which I have presented posters for. At the same time, I served as president of FGCU's psychology club, working with a team of officers to coordinate funding and events focused on professional development.</p>
+        <p>Currently, I am in the process of gaining more person-to-person psychology experience through clinical shadowing opportunities and a potential position at a local mental health clinic. I am continuing my aforementioned research, focusing especially on expansions to my thesis project, and I am looking forward to further developing my abilities as a researcher and a clinician.</p>
+      </div>
+
+      <div class="hero-tags">
+        <span class="tag">Clinical Psychology</span>
+        <span class="tag">Neuroscience &amp; Cognition</span>
+        <span class="tag warm">Neuropsychology</span>
+        <span class="tag warm">Experimental Treatments</span>
+        <span class="tag">Metacognition</span>
+        <span class="tag">Biopsychosocial Approach</span>
+      </div>
+
+      <button class="btn" onclick="show('research')">View My Research</button>
+      <button class="btn outline" onclick="show('cv')">View CV</button>
+    </div>
+
+    <div class="hero-portrait">
+      <div class="portrait-frame">
+        <!--
+          TO ADD YOUR PHOTO:
+          1. Save your photo as "photo.jpg" in the same folder as index.html
+          2. Delete the portrait-placeholder div below
+          3. Uncomment the img tag:
+          <img src="photo.jpg" alt="Logan Welch" style="width:100%;height:100%;object-fit:cover;">
+        -->
+        <div class="portrait-placeholder">🧑‍🔬</div>
+      </div>
+      <p class="portrait-label">Add your photo — see comment in HTML</p>
+      <div class="affiliation-badge">
+        <p>Currently at</p>
+        <strong>Florida Gulf Coast University</strong>
+        <p style="font-size:12px;margin-top:2px;">Honors College · Dept. of Psychology</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESEARCH ===== -->
+<section id="research">
+  <div class="container">
+    <div class="page-header">
+      <p class="eyebrow">What I Study</p>
+      <h2>Research &amp; Projects</h2>
+      <p>My research spans biological, psychological, and social considerations for improving pathologies, focusing on bridging gaps among approaches to improve mental health care.</p>
+    </div>
+    <div class="research-grid">
+
+      <div class="research-card">
+        <span class="card-badge badge-clinical">Honors Thesis</span>
+        <h3>Perceptions of Experimental Treatments — Ketamine Study</h3>
+        <p>Designed a mixed-methods study examining sensitive clinical attitudes toward an experimental treatment. Developed full IRB submission including informed consent forms, Qualtrics surveys, recruitment materials, and study protocols. Wrote complete research proposal, collected and analyzed data, and successfully defended thesis. Poster accepted at Southeastern Psychological Association 2026 Conference.</p>
+        <div class="card-meta">
+          <span>📅 Summer 2025–Present</span>
+          <span>🏛 FGCU, Dr. Krystal D. Mize</span>
+          <span>Role: Head Researcher</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <span class="card-badge badge-neuro">Metacognition</span>
+        <h3>Metacognition &amp; Source Learning Project</h3>
+        <p>Scheduled and facilitated lab sessions; administered assessments and questionnaires; tracked participant progress and maintained data collection and storage protocols. Ran statistical tests and generated visualizations in SPSS. Co-presented findings at SURI 2024 Conference (Ft. Myers, FL).</p>
+        <div class="card-meta">
+          <span>📅 Fall 2024–Present</span>
+          <span>🏛 FGCU, Dr. Starlette Sinclair</span>
+          <span>Role: Research Assistant</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <span class="card-badge badge-method">Eating Disorders</span>
+        <h3>Nutrition Education in Student Athletes</h3>
+        <p>Assisted with participant recruitment and multi-site data collection; administered surveys; performed quantitative analysis in SPSS. Co-presented at CEPO 2025 Conference (Atlanta, GA).</p>
+        <div class="card-meta">
+          <span>📅 Spring 2025</span>
+          <span>🏛 FGCU / UWEC — Dr. Sinclair &amp; Dr. Hines</span>
+          <span>Role: Research Assistant</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <span class="card-badge badge-neuro">Lab Leadership</span>
+        <h3>Imposter Phenomenon Project</h3>
+        <p>Led lab team meetings and mentored junior research assistants in protocol adherence, study design, and data analysis.</p>
+        <div class="card-meta">
+          <span>📅 Fall 2025</span>
+          <span>🏛 FGCU, Dr. Starlette Sinclair</span>
+          <span>Role: Senior Lab Assistant</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PUBLICATIONS ===== -->
+<section id="publications">
+  <div class="container">
+    <div class="page-header">
+      <p class="eyebrow">Scholarly Work</p>
+      <h2>Publications &amp; Presentations</h2>
+      <p>Conference presentations and academic contributions.</p>
+    </div>
+
+    <div style="margin-bottom:1.5rem;display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="tag warm">Conference Presentations</span>
+      <span class="tag">Posters</span>
+    </div>
+
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <p class="pub-year">2026 · Conference Poster</p>
+        <h3>Perceptions of Ketamine as an Experimental Treatment: A Mixed-Methods Study</h3>
+        <p class="pub-authors"><strong>Welch, L.</strong> &amp; Mize, K. D.</p>
+        <p class="pub-venue">Southeastern Psychological Association Annual Conference, 2026</p>
+        <div class="pub-links">
+          <a href="#" class="pub-link">Poster</a>
+          <a href="#" class="pub-link">Abstract</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <p class="pub-year">2025 · Conference Presentation</p>
+        <h3>Nutrition Education in Student Athletes: A Multi-Site Study</h3>
+        <p class="pub-authors"><strong>Welch, L.</strong>, Sinclair, S., &amp; Hines, [I.]</p>
+        <p class="pub-venue">CEPO 2025 Conference, Atlanta, GA</p>
+        <div class="pub-links">
+          <a href="#" class="pub-link">Poster</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <p class="pub-year">2024 · Conference Presentation</p>
+        <h3>Metacognition &amp; Source Learning: Findings from an Undergraduate Research Initiative</h3>
+        <p class="pub-authors"><strong>Welch, L.</strong> &amp; Sinclair, S.</p>
+        <p class="pub-venue">SURI 2024 Conference, Ft. Myers, FL</p>
+        <div class="pub-links">
+          <a href="#" class="pub-link">Poster</a>
+        </div>
+      </div>
+
+      <!-- COPY A PUB BLOCK ABOVE TO ADD MORE -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CV ===== -->
+<section id="cv">
+  <div class="container">
+    <div class="page-header" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <p class="eyebrow">Curriculum Vitae</p>
+        <h2>Academic Background</h2>
+      </div>
+      <!--
+        TO LINK YOUR CV:
+        Place your CV as "Logan_Welch_CV.pdf" in the same folder as index.html.
+        The download button below will automatically link to it.
+      -->
+      <a href="Logan_Welch_CV.pdf" download class="btn">⬇ Download CV</a>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="cv-section">
+      <p class="cv-section-title">Education</p>
+      <div class="cv-item">
+        <p class="cv-year">May 2026</p>
+        <div class="cv-detail">
+          <h4>B.A. in Psychology &amp; Sociology (Dual Degree)</h4>
+          <p class="cv-place">Florida Gulf Coast University — Honors College</p>
+          <p>Concentration: Neuroscience &amp; Cognition · Minor: Biology · GPA: 3.99</p>
+          <p>President's Gold 4-Year Scholarship Recipient · President's List</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESEARCH -->
+    <div class="cv-section">
+      <p class="cv-section-title">Research Experience</p>
+
+      <div class="cv-item">
+        <p class="cv-year">Summer 2025–Present</p>
+        <div class="cv-detail">
+          <h4>Head Researcher — Honors Thesis on Ketamine Treatments</h4>
+          <p class="cv-place">FGCU, Dr. Krystal D. Mize</p>
+          <ul>
+            <li>Designed a mixed-methods study on sensitive clinical attitudes; developed full IRB submission including consent forms, Qualtrics surveys, recruitment materials, and study protocols.</li>
+            <li>Wrote complete research proposal: literature review, research questions, hypotheses, method, and data analysis plan.</li>
+            <li>Collected and analyzed data; successfully defended thesis and submitted final project.</li>
+            <li>Poster accepted at Southeastern Psychological Association 2026 Conference.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <p class="cv-year">Fall 2025</p>
+        <div class="cv-detail">
+          <h4>Senior Lab Assistant — Imposter Phenomenon Project</h4>
+          <p class="cv-place">FGCU, Dr. Starlette Sinclair</p>
+          <ul>
+            <li>Led lab team meetings; mentored junior research assistants in protocol adherence, study design, and data analysis.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <p class="cv-year">Spring 2025</p>
+        <div class="cv-detail">
+          <h4>Research Assistant — Nutrition Education in Student Athletes</h4>
+          <p class="cv-place">FGCU / UWEC — Dr. Sinclair &amp; Dr. Hines</p>
+          <ul>
+            <li>Assisted with participant recruitment and multi-site data collection; administered surveys; performed quantitative analysis in SPSS.</li>
+            <li>Co-presented at CEPO 2025 Conference (Atlanta, GA).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <p class="cv-year">Fall 2024–Present</p>
+        <div class="cv-detail">
+          <h4>Research Assistant — Metacognition &amp; Source Learning Project</h4>
+          <p class="cv-place">FGCU, Dr. Starlette Sinclair</p>
+          <ul>
+            <li>Scheduled and facilitated lab sessions; administered assessments and questionnaires; tracked participant progress and maintained data protocols.</li>
+            <li>Ran statistical tests and generated visualizations in SPSS; co-presented findings at SURI 2024 Conference (Ft. Myers, FL).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK & VOLUNTEER -->
+    <div class="cv-section">
+      <p class="cv-section-title">Work &amp; Volunteer Experience</p>
+
+      <div class="cv-item">
+        <p class="cv-year">2024–2026</p>
+        <div class="cv-detail">
+          <h4>President &amp; Vice President — FGCU Psychology Club</h4>
+          <p class="cv-place">Florida Gulf Coast University</p>
+          <ul>
+            <li>Led 8-officer team; managed scheduling, budgets, agendas, and event coordination.</li>
+            <li>Organized mental health internship event with David Lawrence Mental Health Center; helped arrange conference funding for students.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <p class="cv-year">2019–Present</p>
+        <div class="cv-detail">
+          <h4>Administrative Assistant</h4>
+          <p class="cv-place">Life Care Center of Estero (Long-Term Care Facility)</p>
+          <ul>
+            <li>Communicated daily with elderly residents, families, and medical providers; processed admissions, managed sensitive documentation, and maintained a supportive environment for older adults.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <p class="cv-year">2023</p>
+        <div class="cv-detail">
+          <h4>Benefits Concert Fundraiser — Hunting for a Cure</h4>
+          <p class="cv-place">Community Volunteer</p>
+          <ul>
+            <li>Planned, organized, and hosted a benefits concert; performed guitar, raising over $1,000 for a nonprofit supporting those with Hunter Syndrome.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- AWARDS -->
+    <div class="cv-section">
+      <p class="cv-section-title">Awards &amp; Honors</p>
+      <div class="cv-item">
+        <p class="cv-year">2022–2026</p>
+        <div class="cv-detail">
+          <h4>Florida Bright Futures Academic Scholars</h4>
+          <p class="cv-place">Full Tuition Scholarship</p>
+        </div>
+      </div>
+      <div class="cv-item">
+        <p class="cv-year">2022–2026</p>
+        <div class="cv-detail">
+          <h4>FGCU President's Gold Scholarship</h4>
+          <p class="cv-place">$20,000</p>
+        </div>
+      </div>
+      <div class="cv-item">
+        <p class="cv-year">2024</p>
+        <div class="cv-detail">
+          <h4>Honors College Research Travel Grant</h4>
+          <p class="cv-place">Florida Gulf Coast University · ~$1,600</p>
+        </div>
+      </div>
+      <div class="cv-item">
+        <p class="cv-year">Ongoing</p>
+        <div class="cv-detail">
+          <h4>President's List</h4>
+          <p class="cv-place">Florida Gulf Coast University</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="cv-section">
+      <p class="cv-section-title">Skills &amp; Certifications</p>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px;">Software</p>
+      <div class="skills-grid" style="margin-bottom:16px;">
+        <span class="tag">SPSS</span>
+        <span class="tag">JASP</span>
+        <span class="tag">Qualtrics</span>
+        <span class="tag">E-Prime (in training)</span>
+        <span class="tag warm">MS Office Suite</span>
+        <span class="tag warm">Canva</span>
+      </div>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px;">Certifications</p>
+      <div class="skills-grid">
+        <span class="tag">Mental Health First Aid (NCBH)</span>
+        <span class="tag">CITI Social &amp; Behavioral Research</span>
+        <span class="tag warm">MoCA Cognitive Assessment Certified</span>
+        <span class="tag">IRB Protocol Writing</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="page-header">
+      <p class="eyebrow">Get in Touch</p>
+      <h2>Contact</h2>
+      <p>I'm always happy to connect with fellow researchers, mentors, and prospective collaborators.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <div>
+          <h4>Email</h4>
+          <p><a href="mailto:ltwelch4792@eagle.fgcu.edu" style="color:var(--sage);text-decoration:none;font-weight:400;">ltwelch4792@eagle.fgcu.edu</a></p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🎓</div>
+        <div>
+          <h4>Google Scholar</h4>
+          <!-- Add your Google Scholar link when available -->
+          <p><a href="#" style="color:var(--sage);font-weight:400;">View Publications</a></p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🔗</div>
+        <div>
+          <h4>LinkedIn</h4>
+          <p><a href="https://www.linkedin.com/in/loganwelchforclinical" target="_blank" style="color:var(--sage);font-weight:400;">loganwelchforclinical</a></p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Location</h4>
+          <p>Fort Myers, FL</p>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      CONTACT FORM:
+      To make this form send real emails:
+      1. Sign up at https://formspree.io (free)
+      2. Create a new form pointed at ltwelch4792@eagle.fgcu.edu
+      3. Replace YOUR_FORM_ID below with your real form ID
+    -->
+    <div class="contact-form">
+      <h3>Send Logan a Message</h3>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_replyto" value="ltwelch4792@eagle.fgcu.edu">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Dr. Jane Smith" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Email</label>
+            <input type="email" name="email" placeholder="jane@university.edu" required>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="Research Collaboration">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Hello Logan! I came across your work on..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Logan Welch · Clinical Psychology &amp; Neuropsychology · Florida Gulf Coast University</p>
+</footer>
+
+<script>
+  function show(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.getElementById('nav-' + id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
